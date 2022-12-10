@@ -3,6 +3,8 @@ package org.example;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import java.util.List;
 
 public class App 
 {
@@ -49,5 +51,7 @@ public class App
 
         em.close();
         emf.close();
+        Query query = em.createQuery("select brand, model from Car where year > 2011");
+        List list = query.getResultList();
     }
 }
