@@ -1,16 +1,17 @@
 package org.example;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Car {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     private String brand;
     private String model;
     private int year;
-    public Car(){
+
+    public Car() {
 
     }
 
